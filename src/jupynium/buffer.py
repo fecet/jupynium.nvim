@@ -116,7 +116,7 @@ class JupyniumBuffer:
         """
         if cell_type == "code":
             return "\n".join(
-                line[2:] if line.startswith("# %") else line for line in lines
+                line[2:] if line.startswith("# %") or line.startswith("# !") else line for line in lines
             )
         elif cell_type == "markdown (jupytext)":
             if len(lines) > 0 and lines[0] == '"""':

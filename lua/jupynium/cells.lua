@@ -22,7 +22,7 @@ function M.line_type(line)
     return "cell separator: code (string)"
   elseif utils.string_begins_with(line, "# ---") then
     return "metadata"
-  elseif utils.string_begins_with(line, "# %") then
+  elseif utils.string_begins_with(line, "# %") or utils.string_begins_with(line, "# !") then
     return "magic command"
   elseif vim.fn.trim(line) == "" then
     return "empty"
