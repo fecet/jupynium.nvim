@@ -98,6 +98,7 @@ class JupyniumBuffer:
                 line.strip() == "# %%"
                 or line.startswith('%%"""')
                 or line.startswith("%%'''")
+                or line.startswith("# %% ")
             ):
                 num_rows_per_cell.append(num_rows_this_cell)
                 num_rows_this_cell = 1
