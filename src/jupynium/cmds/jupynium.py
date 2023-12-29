@@ -444,7 +444,7 @@ def main():
     )
     console_handler.setFormatter(console_format)
 
-    tmp_log_dir = os.path.join(tempfile.gettempdir(), "jupynium", "logs")
+    tmp_log_dir = os.path.join(str(Path.home()), "jupynium", "logs")
     os.makedirs(tmp_log_dir, exist_ok=True)
     log_path = os.path.join(tmp_log_dir, f"{datetime.now():%Y-%m-%d_%H-%M-%S}.log")
 
